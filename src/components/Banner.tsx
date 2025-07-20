@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import type { ReactElement } from "react";
 import mobilePhoneImg from "../assets/products/mobile-phone.jpg";
 import laptopImg from "../assets/products/laptop.jpg";
