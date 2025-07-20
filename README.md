@@ -1,6 +1,7 @@
 # Shopping Cart
 
-A modern e-commerce shopping cart built with React, Redux, and Vite.
+A modern, user-friendly e-commerce shopping cart application built with React, Redux Toolkit, and Vite.
+Easily browse products, manage your cart, and enjoy a seamless shopping experience.
 
 ## 🚀 Live Demo
 
