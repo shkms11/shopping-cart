@@ -301,8 +301,16 @@ export const ShoppingCart = (): ReactElement => {
         },
     ];
 
-    const handleAddToCart = (product: CartItem) => {
-        dispatch(addToCart(product));
+    const handleAddToCart = (model: any) => {
+        const cartItem: CartItem = {
+            id: model.id,
+            name: model.name,
+            price: model.price,
+            image: model.image,
+            quantity: 1,
+            totalPrice: model.price,
+        };
+        dispatch(addToCart(cartItem));
     };
 
     const handleDecrease = (id: string) => {
