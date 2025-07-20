@@ -30,6 +30,7 @@ import galaxyTabS8Img from "./assets/products/galaxy-tab-s8.jpg";
 import tvImg from "./assets/products/tv.jpg";
 import samsungQled4kImg from "./assets/products/samsung-qled-4k.jpg";
 import lgOledCxImg from "./assets/products/lg-oled-cx.jpg";
+import Banner from "./components/Banner";
 
 interface CartItem {
     id: string;
@@ -324,10 +325,18 @@ export const ShoppingCart = (): ReactElement => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div
+            className="min-h-screen flex flex-col"
+            style={{
+                backgroundImage: 'url(https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png)',
+                backgroundRepeat: 'repeat',
+                backgroundSize: 'auto',
+            }}
+        >
             <Header />
 
             <main className="flex-grow max-w-7xl mx-auto p-4">
+                <Banner />
                 <section>
                     <h2 className="text-xl font-semibold mb-4">Products</h2>
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
