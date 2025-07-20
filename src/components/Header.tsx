@@ -4,7 +4,7 @@ const Header = (): ReactElement => {
     return (
         <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-800 via-blue-900 to-indigo-900 p-5 shadow-lg flex items-center justify-between">
             <h1 className="text-white text-3xl font-extrabold tracking-widest select-none">
-                Shopping Cart
+                ElectroCart
             </h1>
             {/* shopping cart icon */}
             <svg
