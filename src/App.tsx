@@ -1,5 +1,5 @@
 import "./App.css";
-import { ShoppingCart } from "./shoppingCart";
+import { ShoppingCart } from "./ShoppingCart";
 
 function App() {
     return (
