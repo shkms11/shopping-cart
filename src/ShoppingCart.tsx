@@ -1,9 +1,7 @@
 import type { ReactElement } from "react";
 import {
     addToCart,
-    setShowCart,
     decreaseQuantity,
-    removeFromCart,
     clearCart,
 } from "./features/cart/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -328,9 +326,10 @@ export const ShoppingCart = (): ReactElement => {
         <div
             className="min-h-screen flex flex-col"
             style={{
-                backgroundImage: 'url(https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png)',
-                backgroundRepeat: 'repeat',
-                backgroundSize: 'auto',
+                backgroundImage:
+                    "url(https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png)",
+                backgroundRepeat: "repeat",
+                backgroundSize: "auto",
             }}
         >
             <Header />
