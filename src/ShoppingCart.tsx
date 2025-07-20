@@ -10,6 +10,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "./store";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const ShoppingCart = (): ReactElement => {
     const dispatch = useDispatch();
@@ -42,9 +43,9 @@ export const ShoppingCart = (): ReactElement => {
     return (
         <div>
             <div>
-                <Header/>
+                <Header />
             </div>
-            
+
             <button onClick={handleToggle}>toggle on/off</button>
             <div>
                 {showCart && (
@@ -60,6 +61,9 @@ export const ShoppingCart = (): ReactElement => {
             </div>
             <div>
                 <button onClick={handleAddToCart}>add to cart</button>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     );
