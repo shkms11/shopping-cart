@@ -375,39 +375,54 @@ export const ShoppingCart = (): ReactElement => {
                                         {product.models.map((model, idx) => (
                                             <li
                                                 key={model.id}
-                                                className="flex flex-col items-center border rounded-xl bg-gray-50 p-4 shadow hover:shadow-md transition-shadow duration-200 relative"
+                                                className="flex flex-col md:flex-row md:items-center border rounded-xl bg-gray-50 p-4 shadow hover:shadow-md transition-shadow duration-200 relative"
                                             >
                                                 <img
                                                     src={model.image}
                                                     alt={model.name}
-                                                    className="w-20 h-20 object-cover rounded mb-2 border border-gray-200 bg-white"
+                                                    className="w-20 h-20 object-cover rounded mb-2 md:mb-0 md:mr-4 border border-gray-200 bg-white"
                                                     loading="lazy"
                                                 />
-                                                <span className="font-semibold text-lg text-gray-800 mb-1">
-                                                    {model.name}
-                                                </span>
-                                                <span className="mb-3 text-blue-700 font-bold text-xl">
-                                                    ${model.price}
-                                                </span>
-                                                <ul className="text-xs text-gray-500 mb-2 list-disc list-inside">
-                                                    {model.features &&
-                                                        model.features.map(
-                                                            (feature, idx) => (
-                                                                <li key={idx}>
-                                                                    {feature}
-                                                                </li>
+                                                <div className="flex-1 flex flex-col items-center md:items-start">
+                                                    <span className="font-semibold text-lg text-gray-800 mb-1">
+                                                        {model.name}
+                                                    </span>
+                                                    <span className="mb-2 text-blue-700 font-bold text-xl">
+                                                        ${model.price}
+                                                    </span>
+                                                    <ul className="text-xs text-gray-500 mb-2 list-disc list-inside">
+                                                        {model.features &&
+                                                            model.features.map(
+                                                                (
+                                                                    feature,
+                                                                    idx
+                                                                ) => (
+                                                                    <li
+                                                                        key={
+                                                                            idx
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            feature
+                                                                        }
+                                                                    </li>
+                                                                )
+                                                            )}
+                                                    </ul>
+                                                </div>
+                                                <div className="flex md:flex-col md:justify-between md:ml-auto items-center w-full md:w-auto mt-2 md:mt-0">
+                                                    <button
+                                                        onClick={() =>
+                                                            handleAddToCart(
+                                                                model
                                                             )
-                                                        )}
-                                                </ul>
-                                                <button
-                                                    onClick={() =>
-                                                        handleAddToCart(model)
-                                                    }
-                                                    className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 rounded-lg font-semibold shadow hover:from-yellow-300 hover:to-yellow-200 hover:text-blue-800 transition-all duration-200"
-                                                    type="button"
-                                                >
-                                                    Add to Cart
-                                                </button>
+                                                        }
+                                                        className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-300 text-blue-900 rounded-lg font-semibold shadow hover:from-yellow-300 hover:to-yellow-200 hover:text-blue-800 transition-all duration-200 md:ml-4"
+                                                        type="button"
+                                                    >
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
                                                 {idx !==
                                                     product.models.length -
                                                         1 && (
@@ -428,18 +443,27 @@ export const ShoppingCart = (): ReactElement => {
                         <p>Your cart is empty.</p>
                     ) : (
                         <>
-                            <ul>
+                            <ul className="space-y-3">
                                 {items.map((item) => (
                                     <li
                                         key={item.id}
-                                        className="mb-2 flex items-center justify-between"
+                                        className="flex items-center justify-between bg-white rounded-lg shadow p-4"
                                     >
-                                        <span>
-                                            {item.name} - Quantity:{" "}
-                                            {item.quantity}
-                                        </span>
+                                        <div className="flex items-center space-x-4">
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                className="w-12 h-12 object-cover rounded border border-gray-200"
+                                            />
+                                            <span className="font-semibold text-gray-800">
+                                                {item.name}
+                                            </span>
+                                            <span className="text-gray-500 text-sm">
+                                                x{item.quantity}
+                                            </span>
+                                        </div>
                                         <div className="flex items-center space-x-2">
-                                            <span className="font-semibold">
+                                            <span className="font-semibold text-blue-900 text-lg">
                                                 ${item.totalPrice}
                                             </span>
                                             <button
