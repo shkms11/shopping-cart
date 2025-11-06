@@ -3,6 +3,7 @@ import {
     addToCart,
     decreaseQuantity,
     clearCart,
+    type CartItem,
 } from "./features/cart/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "./store";
@@ -29,15 +30,6 @@ import tvImg from "./assets/products/tv.jpg";
 import samsungQled4kImg from "./assets/products/samsung-qled-4k.jpg";
 import lgOledCxImg from "./assets/products/lg-oled-cx.jpg";
 import Banner from "./components/Banner";
-
-interface CartItem {
-    id: string;
-    name: string;
-    price: number;
-    quantity: number;
-    totalPrice: number;
-    image: string;
-}
 
 export const ShoppingCart = (): ReactElement => {
     const dispatch = useDispatch();
